@@ -38,11 +38,13 @@
             </tbody>
         </table>
 
+<!--   request sent on button revealed just one change from button click to revealed       -->
         <button 
             id="table__loadmore_button"
             hx-get="/examples/products/table?page=1" 
             hx-target="#products_list_table__body"
             hx-swap="beforeend" 
+            hx-trigger="revealed"
             hx-swap-oob="true"
         >load more products table</button>
 
