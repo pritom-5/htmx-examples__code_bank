@@ -90,5 +90,14 @@
         <button type="submit">SUBMIT</button>
 </form>
     </section>
+
+    <section id="pick_car">
+        <h1>select your car</h1> 
+        <form hx-get="/examples/cars/selected/" hx-swap="none">
+            <%- include("../partials/pick_car_selection" ,{cars}) %>
+            <%- include("../partials/pick_car_model" ,{models}) %>
+            <input type="submit" value="Select car">
+        </form>
+    </section>
 </body>
 </html>

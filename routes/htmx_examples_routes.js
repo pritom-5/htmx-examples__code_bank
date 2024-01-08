@@ -21,6 +21,10 @@ const {
   userValidation,
   userValidationEmail,
 } = require("../controller/components/serve_user_validation");
+const {
+  serveCarsSelection,
+  getSelectedCar,
+} = require("../controller/components/serve_cars_selection");
 
 const htmx_example_routes = Router();
 
@@ -46,5 +50,9 @@ htmx_example_routes.route("/contact/1/edit/").get(serveEditUserDetails);
 // validation related
 htmx_example_routes.route("/user/").post(userValidation);
 htmx_example_routes.route("/user/email/").post(userValidationEmail);
+
+// cars selection
+htmx_example_routes.route("/cars/").get(serveCarsSelection);
+htmx_example_routes.route("/cars/selected/").get(getSelectedCar);
 
 module.exports = { htmx_example_routes };

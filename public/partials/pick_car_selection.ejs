@@ -1,0 +1,5 @@
+<select name="cars" id="cars" hx-get="/examples/cars/" hx-target="#models" hx-swap="outerHTML">
+    <% cars.forEach(function(car) {%>
+        <option value="<%= car %>"><%= car %></option>
+    <% });%>
+</select>
