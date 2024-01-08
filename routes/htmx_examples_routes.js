@@ -29,6 +29,9 @@ const {
   serveAnimation,
   serveThrob,
 } = require("../controller/actions/serve_animations/serve_animations");
+const {
+  serveActiveSearch,
+} = require("../controller/actions/active_search/serve_active_search");
 
 const htmx_example_routes = Router();
 
@@ -62,5 +65,8 @@ htmx_example_routes.route("/cars/selected/").get(getSelectedCar);
 // animations
 htmx_example_routes.route("/animations/").get(serveAnimation);
 htmx_example_routes.route("/animations/color/").get(serveThrob);
+
+// active search
+htmx_example_routes.route("/active_search/").get(serveActiveSearch);
 
 module.exports = { htmx_example_routes };

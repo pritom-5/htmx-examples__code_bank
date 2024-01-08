@@ -99,5 +99,11 @@
             <input type="submit" value="Select car">
         </form>
     </section>
+
+    <section id="active_search">
+        <h1>TRY ACTIVE SEARCH</h1>
+        <input type="text" hx-get="/examples/active_search" name="search" hx-target="#active_search__result" hx-push-url="true" hx-trigger="keyup delay:1s">
+        <div id="active_search__result"></div>
+    </section>
 </body>
 </html>
