@@ -1,0 +1,16 @@
+<% products.forEach(function(p) {%>
+    <%- include("./product_row.ejs", {p}) %>
+<% });%>
+
+
+
+<button 
+    id="table__loadmore_button"
+    hx-get="/examples/products/table?page=<%= page_no %>" 
+    hx-target="#products_list_table__body"
+    hx-swap="beforeend" 
+    hx-swap-oob="true"
+>load more products table</button>
+
+
+

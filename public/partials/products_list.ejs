@@ -1,0 +1,6 @@
+<% products.forEach(function(p) {%>
+    <%- include("../partials/product_card.ejs", {p}) %>
+<% });%>
+
+
+<button id="loadmore_button" hx-get="/examples/products/all?page=<%= page_no %>" hx-target="#products_list" hx-swap="beforeend"  hx-swap="outerHTML" hx-swap-oob="true" >LOAD MORE</button>

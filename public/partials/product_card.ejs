@@ -1,0 +1,7 @@
+<div id="product" hx-vals='{"id": "<%= p.id%>"}' style="display: flex; flex-direction: column; gap: .25rem">
+    <img src="<%=p.thumbnail%>" alt="product image <%=p.id%>" style="max-height: 8rem; object-fit: cover;">
+    <h2><%=p.title%></h2>
+    <p><%=p.description%></p>
+    <h1>Price <%=p.price%></h1>
+    <button>View Details</button>
+</div>

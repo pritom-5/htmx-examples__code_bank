@@ -1,0 +1,8 @@
+<section id="user_section">
+    <div id="user_section__details">
+        <p>First Name: <span><%= u.f_name%></span></p>
+        <p>Last Name: <span><%= u.l_name%></span></p>
+        <p>Eamil Address: <span><%= u.email %></span></p>
+    </div>
+    <button hx-get="/examples/contact/1/edit/" hx-target="#user_section" hx-swap="outerHTML">click to edit</button>
+</section>

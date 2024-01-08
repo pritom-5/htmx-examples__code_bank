@@ -1,0 +1,12 @@
+<tbody id="list">
+    <% users.forEach(function(u) {%>
+        <tr>
+            <td>
+                <input type="checkbox" name="<%= u.id%>" id="list__checkbox">
+            </td>
+            <td><%= u.name%></td>
+            <td><%= u.email%></td>
+            <td><%= u.status%></td>
+        </tr>
+<%});%>
+</tbody>

@@ -1,0 +1,22 @@
+<section id="user_section">
+    <form id="user_section__form" hx-put="/examples/contact/1/" hx-target="#user_section" hx-swap="outerHTML">
+        <div id="user_section__form__f_name">
+            <label for="f_name">First Name</label>
+            <input type="text" name="f_name" id="f_name" value="<%= u.f_name%>">
+        </div>
+
+        <div id="user_section__form__l_name">
+            <label for="l_name">Last Name</label>
+            <input type="text" name="l_name" id="l_name" value="<%= u.l_name%>">
+        </div>
+
+
+        <div id="user_section__form__email">
+            <label for="f_name">Email Address</label>
+            <input type="text" name="email" id="email" value="<%= u.email%>">
+        </div>
+
+        <input type="submit" value="SUBMIT">
+        <button type="button" hx-get="/examples/contact/1/" hx-target="#user_section" hx-swap="outerHTML">CANCEL</button>
+    </form>
+</section>

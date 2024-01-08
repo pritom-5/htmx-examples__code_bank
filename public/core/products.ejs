@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <title>Products</title>
+</head>
+    <script>
+        htmx.config.useTemplateFragments = true;
+    </script>
+<body>
+    <h1>LIST PRODUCTS</h1> 
+
+    <section id="products_list"  style="display: grid; grid-template-columns: repeat( 3, 1fr); gap: 1rem;">
+        <% products.forEach(function(p) {%>
+            <%- include("../partials/product_card.ejs", {p}) %>
+        <% });%>
+    </section>
+
+    <button id="loadmore_button" hx-get="/examples/products/all?page=1" hx-target="#products_list" hx-swap="beforeend"  hx-swap-oob="true" >LOAD MORE</button>
+
+    <section id="products_list_table">
+        <h1>LIST PRODUCTS TABLE</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+
+            <tbody id="products_list_table__body">
+                <% products.forEach(function(p) {%>
+                    <%- include("../partials/product_row.ejs", {p}) %>
+                <% });%>
+            </tbody>
+        </table>
+
+        <button 
+            id="table__loadmore_button"
+            hx-get="/examples/products/table?page=1" 
+            hx-target="#products_list_table__body"
+            hx-swap="beforeend" 
+            hx-swap-oob="true"
+        >load more products table</button>
+
+    </section>
+</body>
+</html>

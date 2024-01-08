@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border: 2px solid gold;
+        border-radius: .5rem;
+        color: gold;
+        background-color: green;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    button:hover {
+        color: green;
+        background-color: gold;
+    }
+</style>
+
+<body>
+    <%- include("../partials/user_details")%>
+
+    <section>
+        <h1>DEACTIVATE & ACTIVATE</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Eamil</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+                <%- include("../partials/list_users")%>
+        </table>
+
+        <div  hx-include="#list__checkbox" hx-target="tbody" hx-swap="outerHTML">
+            <button  hx-put="/examples/users/active/">ACTIVATE</button>
+            <button hx-put="/examples/users/inactive/">DEACTIVATE</button>
+        </div>
+
+    </section>
+</body>
+</html>
