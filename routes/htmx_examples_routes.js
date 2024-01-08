@@ -25,6 +25,10 @@ const {
   serveCarsSelection,
   getSelectedCar,
 } = require("../controller/components/serve_cars_selection");
+const {
+  serveAnimation,
+  serveThrob,
+} = require("../controller/actions/serve_animations/serve_animations");
 
 const htmx_example_routes = Router();
 
@@ -54,5 +58,9 @@ htmx_example_routes.route("/user/email/").post(userValidationEmail);
 // cars selection
 htmx_example_routes.route("/cars/").get(serveCarsSelection);
 htmx_example_routes.route("/cars/selected/").get(getSelectedCar);
+
+// animations
+htmx_example_routes.route("/animations/").get(serveAnimation);
+htmx_example_routes.route("/animations/color/").get(serveThrob);
 
 module.exports = { htmx_example_routes };

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations example</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background-color: rgb(20, 18, 18);
+        color: white;
+    }
+    .smooth {
+        transition: all 1s ease-in;
+    }
+</style>
+<body >
+    <section id="color_throb" hx-get="/examples/animations/color/" hx-trigger="every 2s">
+        <%- include("./components/color_throb", {color}) %>
+    </section>    
+</body>
+</html>
