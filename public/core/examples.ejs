@@ -26,6 +26,15 @@
         color: green;
         background-color: gold;
     }
+    button:disabled {
+        background-color: greenyellow;
+    }
+    .invalid {
+        color: pink
+    }
+    .valid {
+        color: greenyellow
+    }
 </style>
 
 <body>
@@ -50,6 +59,36 @@
             <button hx-put="/examples/users/inactive/">DEACTIVATE</button>
         </div>
 
+    </section>
+    
+    <section id="user_validation">
+        <h1>REAL TIME EMAIL VALIDATION</h1>
+        <form hx-post="/examples/user/" hx-swap="none">
+        <div
+            id="user_validation__email"
+        >
+
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="email@email.com"
+            id="user_validation__email_input"
+            hx-post="/examples/user/email/"
+            hx-trigger="keyup delay:500ms"
+            hx-target="#user_validation__email_message"
+            hx-swap="outerHTML"
+            >
+
+            <%- include("../partials/user_email_validation.ejs", {validity_class: "", message: ""})%>
+        </div>
+        <div>
+            <input type="text" name="f_name" id="f_name" placeholder="first name">
+        </div>
+        <div>
+            <input type="text" name="l_name" id="l_name" placeholder="last name">
+        </div>
+        <button type="submit">SUBMIT</button>
+</form>
     </section>
 </body>
 </html>

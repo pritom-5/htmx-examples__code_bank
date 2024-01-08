@@ -17,6 +17,10 @@ const {
   serveProductsComponent,
   serveProductsRowsComponent,
 } = require("../controller/components/serve_products_component");
+const {
+  userValidation,
+  userValidationEmail,
+} = require("../controller/components/serve_user_validation");
 
 const htmx_example_routes = Router();
 
@@ -31,13 +35,16 @@ htmx_example_routes
   .get(serveUserDetails)
   .put(updateUserInfo);
 
+//  prodcuts related
 htmx_example_routes.route("/products/").get(serveProducts);
 htmx_example_routes.route("/products/all/").get(serveProductsComponent);
 
-// TODO:
-// do the prodcuts example but with table
 htmx_example_routes.route("/products/table/").get(serveProductsRowsComponent);
 
 htmx_example_routes.route("/contact/1/edit/").get(serveEditUserDetails);
+
+// validation related
+htmx_example_routes.route("/user/").post(userValidation);
+htmx_example_routes.route("/user/email/").post(userValidationEmail);
 
 module.exports = { htmx_example_routes };

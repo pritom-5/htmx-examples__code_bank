@@ -4,7 +4,7 @@ const LIMIT = 3;
 
 /**
  * @param {number} page
- * @returns {Promise<any>}
+ * @returns {Promise<ProductsT>}
  */
 async function getProducts(page = 0) {
   const skip_products = page * LIMIT;
