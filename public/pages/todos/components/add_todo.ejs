@@ -1,0 +1,19 @@
+<form id="todo__form" hx-post="/examples/todos/" hx-swap="none">
+        <label for="title">title
+        <input type="text" name="title">
+        </label>
+        <label for="desc">description
+        <textarea name="desc" rows="4" cols="50"></textarea>
+        </label>
+        <label for="done">Mark task as done
+        <input type="checkbox" name="done" id="done">
+        </label>
+        <label for="category">Select category
+        <select name="category" id="category">
+            <% for  ( const cat of categories ) { %>
+                <option value="<%= cat %>" ><%= cat %></option>
+            <% } %>
+        </select>
+        </label>
+    <input type="submit" value="Add Task">
+</form>

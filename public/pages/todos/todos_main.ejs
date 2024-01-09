@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- htmx -->
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <!-- alpine js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <title>TODOS</title>
+    <!-- <script>
+         htmx.config.useTemplateFragments = true;
+    </script> -->
+</head>
+<body>
+    <section id="add todos">
+        <h1>Add new todo: </h1>
+        <%- include("./components/add_todo.ejs", {categories}) %>
+    </section> 
+
+    <section id="todos_counter" hx-swap-oob="true">0</section>
+
+
+    <section id="search todos"></section> 
+    <section id="filter todos"></section> 
+    <section id="todos">
+        <table>
+            <thead>
+                <tr>
+                    <th>STATUS</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>CATEGORY</th>
+                </tr>
+            </thead>
+            <tbody id="todos__list">
+            </tbody>
+        </table>
+    </section> 
+
+    <section>
+        <%- include("./components/test_button.ejs") %>
+    </section>
+
+</body>
+</html>

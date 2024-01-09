@@ -1,0 +1,5 @@
+<tbody id="todos__list" hx-swap-oob="outerHTML:#todos__list">
+    <% for (const c of todos ) { %>
+        <%- include("./todo.ejs", {todo: c}) %>
+    <% } %>
+</tbody>

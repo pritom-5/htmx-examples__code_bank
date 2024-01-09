@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>counter</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <section id="counter_js">
+        <h1>COUNTER</h1> 
+        <button 
+            data-counter="1"
+            id="counter" 
+            onclick='+document.querySelector(`[data-counter="1"]`).textContent++'
+            >0</button>
+    </section>
+
+    <section id="counter_alpine" x-data="{count: 0}">
+        <h1>COUNTER ALPINE</h1>
+        <button x-on:click="count++">increment</button>
+        <p id="output" x-text="count"></p>
+    </section>
+
+    <section id="dropdown" x-data="{open: false}">
+        <button id="dropdown__trigger" x-on:click="open = !open">
+            <template x-if="open == true">
+                <span>CLOSE</span>
+            </template>
+            <template x-if="open == false">
+                <span>OPEN</span>
+            </template>
+        </button>
+
+        <div id="dropdown__infos" x-show="open" x-transition>
+            <button>view</button>
+            <button>edit</button>
+            <button>delete</button>
+        </div>
+    </section>
+</body>
+</html>

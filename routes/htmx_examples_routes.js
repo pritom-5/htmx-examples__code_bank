@@ -32,6 +32,15 @@ const {
 const {
   serveActiveSearch,
 } = require("../controller/actions/active_search/serve_active_search");
+const {
+  serveCounter,
+} = require("../controller/actions/serve_counter/serve_counter");
+const {
+  serveTodoList,
+} = require("../controller/actions/todo_list/serve_todo_list");
+const {
+  serveAddTodo,
+} = require("../controller/actions/todo_list/components/serve_add_todo");
 
 const htmx_example_routes = Router();
 
@@ -68,5 +77,11 @@ htmx_example_routes.route("/animations/color/").get(serveThrob);
 
 // active search
 htmx_example_routes.route("/active_search/").get(serveActiveSearch);
+
+// counter
+htmx_example_routes.route("/counter/").get(serveCounter);
+
+// todo_apline_js
+htmx_example_routes.route("/todos/").get(serveTodoList).post(serveAddTodo);
 
 module.exports = { htmx_example_routes };

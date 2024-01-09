@@ -7,3 +7,9 @@ type ProductT = {
   thumbnail: ImgT;
   images: ImgT[];
 };
+
+export type PersonT = {
+  name: string;
+  age: number;
+  address: string;
+};
