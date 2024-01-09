@@ -1,4 +1,4 @@
-<tbody id="todos__list">
+<tbody id="todos__list" hx-swap-oob="true">
     <% for (const c of todos ) { %>
         <%- include("./todo.ejs", {todo: c}) %>
     <% } %>
