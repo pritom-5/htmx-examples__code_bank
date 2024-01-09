@@ -26,8 +26,7 @@ function serveAddTodo(req, res) {
       "../../../../public/pages/todos/components/form_and_todo_partial.ejs"
     ),
     {
-      todos: TODOS.getTodos(),
-      categories: CATEGORIES.getCategories(),
+      todo: new_todo,
     }
   );
 }
