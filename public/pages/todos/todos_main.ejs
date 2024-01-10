@@ -8,11 +8,25 @@
     <!-- alpine js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-
     <title>TODOS</title>
     <script>
          htmx.config.useTemplateFragments = true;
     </script>
+
+    <style>
+        section {
+            margin-block: 2rem;
+            max-width: 80%;
+            margin-inline: auto;
+        }
+        section h1 {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1rem;
+            background-color: yellow;
+        }
+    </style>
+
 </head>
 <body>
     <section id="add todos">
@@ -20,23 +34,24 @@
         <%- include("./components/add_todo.ejs", {categories}) %>
     </section> 
 
-    <section id="todos_counter" hx-swap-oob="true">0</section>
+    <%- include("./components/todos_counter.ejs", {total_todos_count}) %>
 
 
     <section id="search todos"></section> 
     <section id="filter todos"></section> 
     <section id="todos">
+        <h1>Todos Table</h1>
         <table>
             <thead>
                 <tr>
                     <th>STATUS</th>
+                    <th>UPDATE STATUS</th>
                     <th>TITLE</th>
                     <th>DESCRIPTION</th>
                     <th>CATEGORY</th>
                 </tr>
             </thead>
-            <tbody id="todos__list">
-            </tbody>
+            <%- include("./components/todos.ejs", {todos}) %>
         </table>
     </section> 
 

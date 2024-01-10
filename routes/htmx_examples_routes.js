@@ -41,6 +41,9 @@ const {
 const {
   serveAddTodo,
 } = require("../controller/actions/todo_list/components/serve_add_todo");
+const {
+  updateTodoStatus,
+} = require("../controller/actions/todo_list/components/update_todo");
 
 const htmx_example_routes = Router();
 
@@ -83,5 +86,6 @@ htmx_example_routes.route("/counter/").get(serveCounter);
 
 // todo_apline_js
 htmx_example_routes.route("/todos/").get(serveTodoList).post(serveAddTodo);
+htmx_example_routes.route("/todos/status/:id").put(updateTodoStatus);
 
 module.exports = { htmx_example_routes };

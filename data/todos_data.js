@@ -45,9 +45,8 @@ class Todo {
     this.category = updated_todo.category;
   }
 
-  /** @param {boolean} done_state  */
-  updateTodoDone(done_state) {
-    this.done = done_state;
+  updateTodoDone() {
+    this.done = !this.done;
   }
 
   getRandomId() {
@@ -59,7 +58,20 @@ class Todos {
   /** @type {Todo[]} */
   todos = [];
 
-  /** @param {{title: string, desc: string, done: boolean, category: string}} new_todo */
+  seedTodos() {
+    const seed_values = [
+      { title: "todo 1", desc: "desc 1", done: "on", category: "new" },
+      { title: "todo 2", desc: "desc 2", done: "", category: "new" },
+      { title: "todo 3", desc: "desc 3", done: "on", category: "new" },
+      { title: "todo 4", desc: "desc 4", done: "", category: "new" },
+    ];
+
+    for (const value of seed_values) {
+      this.addTodo(value);
+    }
+  }
+
+  /** @param {{title: string, desc: string, done: string, category: string}} new_todo */
   addTodo(new_todo) {
     this.todos.push(
       new Todo(new_todo.title, new_todo.desc, new_todo.done, new_todo.category)
@@ -73,6 +85,10 @@ class Todos {
 
   getNosTodos() {
     return this.todos.length;
+  }
+
+  getNosDoneTodos() {
+    return this.todos.filter((todo) => todo.done).length;
   }
 
   getTodos() {
@@ -95,5 +111,8 @@ class Todos {
 
 const CATEGORIES = new Categories("new", "important", "work");
 const TODOS = new Todos();
+
+// seed initial values
+TODOS.seedTodos();
 
 module.exports = { CATEGORIES, TODOS };

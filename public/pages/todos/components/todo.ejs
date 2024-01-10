@@ -1,9 +1,22 @@
-<tr id="new_todo">
-    <td> DONE </td> 
+<tr id="todo_<%= todo.id %>" x-data="{done: <%= todo.done %>}">
+    <td x-text='done ? "DONE" : "PENDING" '></td> 
+    <td>
+        <input 
+            type="checkbox" 
+            name="done" 
+            x-bind:checked="done" 
+            hx-put="/examples/todos/status/<%= todo.id %>"
+            hx-trigger="change"
+            hx-target="closest tr"            
+            hx-swap="outerHTML"
+            >
+    </td>
     <td><%= todo.title %></td>
-    <td><%= todo.desc %></td>
+    <td><%= todo.desc.split(" ").slice(0, 2).join(" ")  %>...</td>
     <td><%= todo.category %></td>
 </tr>
 
 
 
+
+            <!-- hx-target="#todo_<%= todo.id %>" -->

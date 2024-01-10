@@ -10,7 +10,12 @@
 -- make todos class ✅
 -- methods: add, remove, get_todos, get_todo, get_nos_todos, get_searched_todos, filters: ?
 
--- add new category
+-- show todos when load ✅
+-- a way to update done todo ✅
+
+-- edit todo inline
+-- add new todo category: allow multiple categroy to select. put all selected categories in array may be a checkbox with multiple select
+-- show details and edit item there
 
 ## features:
 

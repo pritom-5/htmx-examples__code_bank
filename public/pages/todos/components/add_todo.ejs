@@ -1,4 +1,11 @@
-<form id="todo__form" hx-post="/examples/todos/" hx-target="#todos__list" hx-swap="beforeend" hx-on::after-request='this.reset()'>
+<form 
+    id="todo__form" 
+    hx-post="/examples/todos/" 
+    hx-target="#todos__list" 
+    hx-swap="afterbegin" 
+    hx-on::after-request='this.reset()'
+    style='display: flex; flex-direction: column; margin-inline: auto;  gap: .5rem; max-width: 70%;' 
+    >
         <label for="title">title
         <input type="text" name="title">
         </label>
@@ -15,5 +22,7 @@
             <% } %>
         </select>
         </label>
-    <input type="submit" value="Add Task">
+    <input type="submit" value="Add Task" 
+        style="border:none; outline: none; padding: 1rem 2rem; background-color: green; color: white;"
+    >
 </form>

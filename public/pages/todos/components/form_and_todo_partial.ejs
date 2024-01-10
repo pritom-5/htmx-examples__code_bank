@@ -1,10 +1,10 @@
 <%- include("./todo.ejs", {todo}) %>
 
-<section id="todos_counter" hx-swap-oob="true">100</section>
+<%- include("./todos_counter.ejs", {total_todos_count}) %>
+
 
 <%- include("./test_button.ejs", {t: "changed this---------"}) %>
 
-<!-- <%- include("./add_todo.ejs", {categories}) %> -->
 
 
 
@@ -13,6 +13,3 @@
 
 
 
-
-
-<!-- update button at the same request  -->
