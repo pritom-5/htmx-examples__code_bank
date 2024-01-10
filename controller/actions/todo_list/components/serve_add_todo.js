@@ -8,15 +8,10 @@ const { CATEGORIES, TODOS } = require("../../../../data/todos_data");
 function serveAddTodo(req, res) {
   const new_todo = req.body;
 
-  // // TODO: remove this
-  // const new_todo = {
-  //   title: "new title",
-  //   desc: "new desc",
-  //   done: "on",
-  //   category: "new",
-  // };
-
   TODOS.addTodo(new_todo);
+
+  // replace on with boolean value
+  new_todo.done = new_todo.done === "on" ? true : false;
 
   res.render(
     path.resolve(

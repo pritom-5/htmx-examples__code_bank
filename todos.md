@@ -13,6 +13,10 @@
 -- show todos when load ✅
 -- a way to update done todo ✅
 
+-- active search todo.
+-- filter todo by category
+-- filter todo by update status
+-- all of them should send query request
 -- edit todo inline
 -- add new todo category: allow multiple categroy to select. put all selected categories in array may be a checkbox with multiple select
 -- show details and edit item there

@@ -7,22 +7,22 @@
     style='display: flex; flex-direction: column; margin-inline: auto;  gap: .5rem; max-width: 70%;' 
     >
         <label for="title">title
-        <input type="text" name="title">
+            <input type="text" name="title">
         </label>
         <label for="desc">description
-        <textarea name="desc" rows="4" cols="50"></textarea>
+            <textarea name="desc" rows="4" cols="50"></textarea>
         </label>
         <label for="done">Mark task as done
-        <input type="checkbox" name="done" id="done">
+            <input type="checkbox" name="done" id="done">
         </label>
         <label for="category">Select category
-        <select name="category" id="category">
-            <% for  ( const cat of categories ) { %>
-                <option value="<%= cat %>" ><%= cat %></option>
-            <% } %>
-        </select>
+            <select name="category" id="category">
+                <% for  ( const cat of categories ) { %>
+                    <option value="<%= cat %>" ><%= cat %></option>
+                <% } %>
+            </select>
         </label>
-    <input type="submit" value="Add Task" 
-        style="border:none; outline: none; padding: 1rem 2rem; background-color: green; color: white;"
-    >
+        <input type="submit" value="Add Task" 
+        style="align-self: flex-end; border:none; outline: none; padding: 1rem 2rem; background-color: green; color: white;"
+        >
 </form>
